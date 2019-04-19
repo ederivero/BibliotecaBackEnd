@@ -1,0 +1,17 @@
+C:\Users\ederi\source\repos\Biblioteca\Biblioteca\bin\Debug\Biblioteca.exe.config
+C:\Users\ederi\source\repos\Biblioteca\Biblioteca\bin\Debug\Biblioteca.exe
+C:\Users\ederi\source\repos\Biblioteca\Biblioteca\bin\Debug\Biblioteca.pdb
+C:\Users\ederi\source\repos\Biblioteca\Biblioteca\bin\Debug\EntityFramework.dll
+C:\Users\ederi\source\repos\Biblioteca\Biblioteca\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ederi\source\repos\Biblioteca\Biblioteca\bin\Debug\EntityFramework.xml
+C:\Users\ederi\source\repos\Biblioteca\Biblioteca\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ederi\source\repos\Biblioteca\Biblioteca\obj\Debug\Biblioteca.csprojAssemblyReference.cache
+C:\Users\ederi\source\repos\Biblioteca\Biblioteca\obj\Debug\Biblioteca.Form1.resources
+C:\Users\ederi\source\repos\Biblioteca\Biblioteca\obj\Debug\Biblioteca.Properties.Resources.resources
+C:\Users\ederi\source\repos\Biblioteca\Biblioteca\obj\Debug\Biblioteca.csproj.GenerateResource.cache
+C:\Users\ederi\source\repos\Biblioteca\Biblioteca\obj\Debug\Biblioteca.csproj.CoreCompileInputs.cache
+C:\Users\ederi\source\repos\Biblioteca\Biblioteca\obj\Debug\Biblioteca.csproj.CopyComplete
+C:\Users\ederi\source\repos\Biblioteca\Biblioteca\obj\Debug\Biblioteca.exe
+C:\Users\ederi\source\repos\Biblioteca\Biblioteca\obj\Debug\Biblioteca.pdb
+C:\Users\ederi\source\repos\Biblioteca\Biblioteca\obj\Debug\Biblioteca.Principal.resources
+C:\Users\ederi\source\repos\Biblioteca\Biblioteca\obj\Debug\Biblioteca.AddUser.resources

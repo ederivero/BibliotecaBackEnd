@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="415afc4cf5ff488daa89fa219be64516" Name="Diagram1">
+        <EntityTypeShape EntityType="bibliotecaModel.tbCategoria" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bibliotecaModel.tbCliente" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="bibliotecaModel.tbHistorico" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="bibliotecaModel.tbLibro" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="bibliotecaModel.tbPersona" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="bibliotecaModel.tbUsuario" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <AssociationConnector Association="bibliotecaModel.fkCategoriaCategoria" ManuallyRouted="false" />
+        <AssociationConnector Association="bibliotecaModel.fkClientePersona" ManuallyRouted="false" />
+        <AssociationConnector Association="bibliotecaModel.fkHistoricoCliente" ManuallyRouted="false" />
+        <AssociationConnector Association="bibliotecaModel.fkHistoricoLibro" ManuallyRouted="false" />
+        <AssociationConnector Association="bibliotecaModel.fkUsuarioPersona" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

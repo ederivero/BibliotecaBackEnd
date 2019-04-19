@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="bibliotecaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbCategoria">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descCategoria" Type="varchar" MaxLength="40" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbCliente">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dni" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbHistorico">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idCliente" Type="int" Nullable="false" />
+    <Property Name="idLibro" Type="int" Nullable="false" />
+    <Property Name="fechaPrestamo" Type="date" Nullable="false" />
+    <Property Name="fechaDevolucion" Type="date" />
+  </EntityType>
+  <EntityType Name="tbLibro">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="autor" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="idCategoria" Type="int" Nullable="false" />
+    <Property Name="estado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbPersona">
+    <Key>
+      <PropertyRef Name="dni" />
+    </Key>
+    <Property Name="dni" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="30" />
+    <Property Name="apellidoPaterno" Type="varchar" MaxLength="30" />
+    <Property Name="apellidoMaterno" Type="varchar" MaxLength="30" />
+    <Property Name="direccion" Type="varchar" MaxLength="40" />
+    <Property Name="password" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="tbUsuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dni" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="fkCategoriaCategoria">
+    <End Role="tbCategoria" Type="Self.tbCategoria" Multiplicity="1" />
+    <End Role="tbLibro" Type="Self.tbLibro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbCategoria">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbLibro">
+        <PropertyRef Name="idCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkClientePersona">
+    <End Role="tbPersona" Type="Self.tbPersona" Multiplicity="1" />
+    <End Role="tbCliente" Type="Self.tbCliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbPersona">
+        <PropertyRef Name="dni" />
+      </Principal>
+      <Dependent Role="tbCliente">
+        <PropertyRef Name="dni" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkHistoricoCliente">
+    <End Role="tbCliente" Type="Self.tbCliente" Multiplicity="1" />
+    <End Role="tbHistorico" Type="Self.tbHistorico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbCliente">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbHistorico">
+        <PropertyRef Name="idCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkHistoricoLibro">
+    <End Role="tbLibro" Type="Self.tbLibro" Multiplicity="1" />
+    <End Role="tbHistorico" Type="Self.tbHistorico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbLibro">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tbHistorico">
+        <PropertyRef Name="idLibro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkUsuarioPersona">
+    <End Role="tbPersona" Type="Self.tbPersona" Multiplicity="1" />
+    <End Role="tbUsuario" Type="Self.tbUsuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbPersona">
+        <PropertyRef Name="dni" />
+      </Principal>
+      <Dependent Role="tbUsuario">
+        <PropertyRef Name="dni" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="bibliotecaModelStoreContainer">
+    <EntitySet Name="tbCategoria" EntityType="Self.tbCategoria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbCliente" EntityType="Self.tbCliente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbHistorico" EntityType="Self.tbHistorico" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbLibro" EntityType="Self.tbLibro" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbPersona" EntityType="Self.tbPersona" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbUsuario" EntityType="Self.tbUsuario" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fkCategoriaCategoria" Association="Self.fkCategoriaCategoria">
+      <End Role="tbCategoria" EntitySet="tbCategoria" />
+      <End Role="tbLibro" EntitySet="tbLibro" />
+    </AssociationSet>
+    <AssociationSet Name="fkClientePersona" Association="Self.fkClientePersona">
+      <End Role="tbPersona" EntitySet="tbPersona" />
+      <End Role="tbCliente" EntitySet="tbCliente" />
+    </AssociationSet>
+    <AssociationSet Name="fkHistoricoCliente" Association="Self.fkHistoricoCliente">
+      <End Role="tbCliente" EntitySet="tbCliente" />
+      <End Role="tbHistorico" EntitySet="tbHistorico" />
+    </AssociationSet>
+    <AssociationSet Name="fkHistoricoLibro" Association="Self.fkHistoricoLibro">
+      <End Role="tbLibro" EntitySet="tbLibro" />
+      <End Role="tbHistorico" EntitySet="tbHistorico" />
+    </AssociationSet>
+    <AssociationSet Name="fkUsuarioPersona" Association="Self.fkUsuarioPersona">
+      <End Role="tbPersona" EntitySet="tbPersona" />
+      <End Role="tbUsuario" EntitySet="tbUsuario" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

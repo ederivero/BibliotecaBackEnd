@@ -1,0 +1,8 @@
+Aca estan los scripts para que funcione el programa, se necesito una base de datos llamada Biblioteca con 06 tablas
+*tbCategoria -> Categoria de los libros.
+*tbCliente -> Clientes que pueden sacar o devolver libros
+*tbPersona -> Se almacenan todas las personas ya sean usuarios (trabajadores) o clientes.
+*tbUsuario -> Donde estan todos los usuarios que pueden acceder para hacer prestamos y devoluciones a los clientes.
+*tbHistorico -> Donde se guarda todo el registro de movimientos de libros.
+*tbLibro -> Donde se almacena todos los libros que posee la tienda.
+Adicionalmente se añadio un backup de la base de datos.
